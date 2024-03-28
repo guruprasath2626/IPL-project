@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Teams(models.Model):
     team_name = models.CharField(max_length=500)
-
+    
 
 class Players(models.Model):
     player_name =models.CharField(max_length=500)
@@ -23,4 +23,4 @@ class TablePoints(models.Model):
     win= models.BooleanField()
     lose = models.BooleanField()
     draw = models.IntegerField()
-    total_points = models.IntegerField
+    total_points = models.IntegerField()
