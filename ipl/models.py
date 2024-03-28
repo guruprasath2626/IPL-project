@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 class Teams(models.Model):
-    team_name = models.CharField(max_length=500)
-    team_short_name= models.CharField(max_length=10)
-    username =models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
+    team_name = models.CharField(max_length=500,null = True)
+    team_short_name= models.CharField(max_length=10,null = True)
+    username =models.CharField(max_length=100,null = True)
+    password = models.CharField(max_length=100,null = True)
 
     def __str__(self):
         return self.team_name
