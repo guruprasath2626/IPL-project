@@ -3,7 +3,12 @@ from django.db import models
 # Create your models here.
 class Teams(models.Model):
     team_name = models.CharField(max_length=500)
+    team_short_name= models.CharField(max_length=10)
+    username =models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.team_name
 
 class Players(models.Model):
     player_name =models.CharField(max_length=500)
@@ -29,3 +34,6 @@ class TablePoints(models.Model):
     lose = models.BooleanField()
     draw = models.IntegerField()
     total_points = models.IntegerField
+
+    def __str__(self):
+        return self.total_points
