@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import *
+from .models import *
 from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 
@@ -32,4 +33,9 @@ def admin_logout(request):
 
 @login_required
 def index(request):
-    return render(request,'index.html',{})
+    teams = Teams.objects.all()
+    
+    context = {
+        'teams':teams
+    }
+    return render(request,'index.html',context)

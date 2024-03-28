@@ -7,8 +7,21 @@
 {% block content %}
 
 <div class="h1">
-    Welcome to admin Page
-</div>
-    
-{% endblock  %}
-    
+    Welcome to admin Page</div>
+
+    <div class="table">
+        <div class="tr">
+            <div class="th">Teams</div>
+        </div>
+        <div class="tr">
+            </div>
+            {% for i in teams %}
+                <div class="td">{{i.team_name}}</div>    
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
